@@ -1,0 +1,81 @@
+﻿@model IEnumerable<FrontEnd.Models.DBErroresViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdError)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ErrorNumero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ErrorStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ErrorSeveridad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ErrorLinea)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ErrorProcedimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ErrorMessage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ErrorDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdUsuario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdError)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ErrorNumero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ErrorStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ErrorSeveridad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ErrorLinea)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ErrorProcedimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ErrorMessage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ErrorDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdUsuario)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new {  id=item.IdError  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
